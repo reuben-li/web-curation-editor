@@ -2,9 +2,10 @@
 <head>
 <title>Curator</title>
 <link rel="stylesheet" type="text/css" href="index.css">
-
-<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
 <script type="text/javascript" src="js/extract.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <body>
@@ -33,7 +34,8 @@
             <img id="loading_indicator" src="images/ajax-loader.gif">
             <div id="results">
             </div>
-            <a id="addadd" class="adder confirmpreview" href="">click to confirm text and image</a>
+            <p class="hint confirmpreview">You can edit the title and text by clicking on them. You can also change the image displayed.</p>
+            <a id="addadd" class="adder confirmpreview" href="">click here add url preview</a>
         </div>
 
         <div id="gimage">

@@ -1,3 +1,18 @@
+function adddrag(){
+        $('#curate_article').sortable({
+            placeholder: "ui-state-highlight",
+            cursor: "move",
+  //              revert: true,
+                drag: function(event, ui){
+                    this.style.backgroundColor = "rgba(255,0,0,0.1)";
+                },
+                stop: function(event, ui){ 
+                    this.style.backgroundColor = "";
+                },
+        });
+}
+
+
 $(document).ready(function() {
     var getUrl  = $('#get_url'); //url to extract from text field
     getUrl.keyup(function() { //user types url in text field        
@@ -23,13 +38,13 @@ $(document).ready(function() {
                         inc_image ='';
                     }
                     //content to be loaded in #results element
-                    var content = '<div class="extracted_url">'+ inc_image +'<div class="extracted_content" ><h4><a href="'+extracted_url+'" target="_blank">'+data.title+'</a></h4><p>'+data.content+'</p><div class="thumb_sel"><span class="prev_thumb" id="thumb_prev">&nbsp;</span><span class="next_thumb" id="thumb_next">&nbsp;</span> </div><span class="small_text" id="total_imgs">'+img_arr_pos+' of '+total_images+'</span><span class="small_text">&nbsp;&nbsp;Choose a Thumbnail</span></div></div>';
+                    var content = '<div class="extracted_url">'+ inc_image +'<div class="extracted_content" ><h4 class="editable" contentEditable><a href="'+extracted_url+'" target="_blank">'+data.title+'</a></h4><p class="editable" contentEditable>'+data.content+'</p><div class="thumb_sel"><span class="prev_thumb" id="thumb_prev">&nbsp;</span><span class="next_thumb" id="thumb_next">&nbsp;</span> </div><span class="small_text" id="total_imgs">'+img_arr_pos+' of '+total_images+'</span><span class="small_text">&nbsp;&nbsp;Choose a Thumbnail</span></div></div>';
                     
                     //load results in the element
                     $("#results").html(content); //append received data into the element
                     $("#results").slideDown(); //show results with slide down effect
                     $("#loading_indicator").hide(); //hide loading indicator image
-                    $('#addadd').show();
+                    $('.confirmpreview').show();
                 },'json');
         }
     });
@@ -68,16 +83,21 @@ $(document).ready(function() {
         e.preventDefault();
         var toadd = $('#results').html();
         $('#curate_article').append('<section class="item"><a class="delete">X</a> '+toadd+'</section>'); 
+        $('.editable').removeAttr('contentEditable');
         $('#results').empty();
-        $('#gurl').css('visibility','hidden');
+        $('#get_url').val('');
+        $('#gurl').css('visibility','hidden').css('height','0px');
+        $('.thumb_sel, .small_text').remove();
+        $('.confirmpreview').hide();
     });
 
     $("#addtext").click(function(e){
         e.preventDefault();
         var toadd = $('#ctext').val().replace(/\n/g, '<br />');
-        $('#curate_article').append('<section class="item"><a class="delete">X</a> <p class="bodytext">'+toadd+'</p></section>'); 
+        $('#curate_article').append('<section class="item"><a class="delete">X</a><p class="bodytext"><span class="quote">&ldquo;</span>'+toadd+'<span class="quote">&rdquo;</span></p></section>'); 
         $('#ctext').val('');
         $('#gtext').css('visibility','hidden').css('height','0px');
+        adddrag();
     });
 
     $("#addtitle").click(function(e){
@@ -125,7 +145,7 @@ $(document).ready(function() {
         e.preventDefault();
         if ($('#gurl').css('visibility') == 'hidden'){
             $('#gurl').css({'visibility':'visible','height':'auto'});
-            $('#curl').focus();
+            $('#get_url').focus();
         }
         else{
             $('#gurl').css({'visibility':'hidden','height':'0px'});
@@ -166,5 +186,5 @@ $(document).ready(function() {
     $('body').on('click', 'a.delete',function(){
         $(this).parent().remove();
     });
-
+  
 });

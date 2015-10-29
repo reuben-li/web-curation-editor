@@ -83,6 +83,7 @@ ul.tools li:hover{
 }
 
 #curate_article{
+    cursor: hand;
     border-top: 2px solid #333;
     border-bottom: 2px solid #333;
     margin-left:auto;
@@ -129,6 +130,13 @@ p.bodytext{
     background: #eee;
     margin:2% 5%;
     padding:5px;
+    text-align:left;
+}
+.quote{
+    font-size:40px;
+    vertical-align:middle;
+    font-weight:bold;
+    color:lightgrey;
 }
 #results{
     width:600px;
@@ -158,4 +166,11 @@ a.delete{
     float:right;
     position:absolute;
     right:5%;
+}
+.hint{
+    font-size:10px;
+}
+section:hover{
+    cursor:move;
+    background-color:rgba(255,0,0,0.1)
 }
