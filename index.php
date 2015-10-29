@@ -30,7 +30,7 @@
         </div>
         
         <div id="gurl" class="">
-            <input type="url" id="get_url" class="input" placeholder="Enter url to preview (including http://)" spellcheck="false" >
+            <input type="url" id="get_url" class="input" placeholder="Enter url to preview" spellcheck="false" >
             <img id="loading_indicator" src="images/ajax-loader.gif">
             <div id="results">
             </div>

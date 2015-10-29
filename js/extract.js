@@ -17,14 +17,17 @@ $(document).ready(function() {
     var getUrl  = $('#get_url'); //url to extract from text field
     getUrl.keyup(function() { //user types url in text field        
         //url to match in the text field
-        var match_url = /\b(https?):\/\/([\-A-Z0-9.]+)(\/[\-A-Z0-9+&@#\/%=~_|!:,.;]*)?(\?[A-Z0-9+&@#\/%=~_|!:,.;]*)?/i;
+        var match_url = /\b([\-A-Z0-9.]+)(\/[\-A-Z0-9+&@#\/%=~_|!:,.;]*)?(\?[A-Z0-9+&@#\/%=~_|!:,.;]*)?/i;
         //returns true and continue if matched url is found in text field
         if (match_url.test(getUrl.val())) {
                 $("#results").hide();
                 $("#loading_indicator").show(); //show loading indicator image
                 
                 var extracted_url = getUrl.val().match(match_url)[0]; //extracted first url from text filed
-                
+                var pattern = /^((http|https|ftp):\/\/)/;
+                if(!pattern.test(extracted_url)) {
+                extracted_url = "http://" + extracted_url;
+} 
                 //ajax request to be sent to extract-process.php
                 $.post('extract-process.php',{'url': extracted_url}, function(data){         
                     
