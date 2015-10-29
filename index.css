@@ -1,0 +1,149 @@
+.extract_url {
+    font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+    font-size: 11px;
+    width: 500px;
+    min-height:100px;
+}
+.get_url_input {
+    border: 1px solid #8E9CA4;
+    padding-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-right: 30px;
+    min-height: 50px;
+}
+.extracted_thumb {
+    float: left;
+    margin-right: 10px;
+}
+
+#loading_indicator{
+    position: absolute;
+    margin-left: 480px;
+    margin-top: 8px;
+    display:none;
+}
+#results{
+    display:none;
+}
+a:link {
+    color: #0066CC;
+}
+.thumb_sel {
+    float: left;
+    height: 22px;
+    width: 55px;
+}
+.thumb_sel .prev_thumb {
+    background: url(images/thumb_selection.gif) no-repeat -50px 0px;
+    float: left;
+    width: 26px;
+    height: 22px;
+    cursor: hand;
+    cursor: pointer;
+}
+.thumb_sel .prev_thumb:hover {
+    background: url(images/thumb_selection.gif) no-repeat 0px 0px;
+}
+
+.thumb_sel .next_thumb {
+    background: url(images/thumb_selection.gif) no-repeat -76px 0px;
+    float: left;
+    width: 24px;
+    height: 22px;
+    cursor: hand; 
+    cursor: pointer;
+}
+.thumb_sel .next_thumb:hover {
+    background: url(images/thumb_selection.gif) no-repeat -26px 0px;
+}
+.small_text{
+    font-size: 10px;
+}
+
+ul.tools{
+    padding: 0px;
+}
+ul.tools li{
+    list-style-type: none;
+    display: inline;
+    margin:5px;
+    font-family:Lucida Sans;
+    font-weight:bold;
+    font-size:16px;
+}
+
+ul.tools li:hover{
+    background: lightblue;
+    cursor: hand;
+}
+
+#gtitle, #gurl, #gtext, #gimage{
+    visibility: hidden;
+    height: 0px;
+}
+
+#curate_article{
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    margin-left:auto;
+    margin-right:auto;
+    clear:both;
+    margin-top:20px;
+    width: 600px;
+}
+
+.extracted_content{
+}
+
+.extracted_content h4 a{
+    text-decoration:none;
+    color: #666;
+}
+.textarea{
+    width:500px
+}
+.input{
+    width:300px;
+    margin-left:auto;
+    margin-right:auto;
+    font-family: Lucida Sans;
+}
+.container{
+    text-align:center;
+    font-family:Lucida Sans;
+    font-size:12px;
+}
+p{
+    word-break: break-all; 
+    font-family:Lucida Sans;
+}
+p.bodytext{
+    font-size:18px;
+}
+.extracted_url{
+    background: #eee;
+    margin:10px 40px;
+    padding:5px;
+}
+#results{
+    width:600px;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+.adder{
+    clear:both;
+    font-size:20px;
+    text-decoration:none;
+    font-weight:bold;
+    color:limegreen;
+}
+.bodyimage{
+    width:520px;
+    margin:10px 40px;
+}
+a.delete{
+    float:right;
+    position:relative;
+    right:-10px
+}
