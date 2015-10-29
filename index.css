@@ -90,6 +90,10 @@ ul.tools li:hover{
     clear:both;
     margin-top:20px;
     width: 600px;
+    max-width:100%;
+    padding-left:3%;
+    padding-right:3%;
+    text-align:left
 }
 
 .extracted_content{
@@ -100,7 +104,8 @@ ul.tools li:hover{
     color: #666;
 }
 .textarea{
-    width:500px
+    width:500px;
+    max-width:90%
 }
 .input{
     width:300px;
@@ -122,11 +127,12 @@ p.bodytext{
 }
 .extracted_url{
     background: #eee;
-    margin:10px 40px;
+    margin:2% 5%;
     padding:5px;
 }
 #results{
     width:600px;
+    max-width:100%;
     margin-left:auto;
     margin-right:auto;
 
@@ -138,12 +144,18 @@ p.bodytext{
     font-weight:bold;
     color:limegreen;
 }
+.confirmpreview{
+    clear:both;
+    font-size:12px;
+    display:none;
+}
 .bodyimage{
     width:520px;
-    margin:10px 40px;
+    margin:2% 5%;
+    max-width:100%;
 }
 a.delete{
     float:right;
-    position:relative;
-    right:-10px
+    position:absolute;
+    right:5%;
 }

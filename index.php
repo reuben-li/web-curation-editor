@@ -6,10 +6,10 @@
 <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="js/extract.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <body>
     <div class="container">
-        <p id="label">add content</p>
+        <p id="label">create your own list now</p>
         <ul class="tools">
             <li id="atitle">title</li>
             <li id="atext">text</li>
@@ -29,12 +29,11 @@
         </div>
         
         <div id="gurl" class="">
-            <img id="loading_indicator" src="images/ajax-loader.gif">
             <input type="url" id="get_url" class="input" placeholder="Enter url to preview (including http://)" spellcheck="false" >
-            <a id="addadd" class="adder" href="">+</a>
+            <img id="loading_indicator" src="images/ajax-loader.gif">
             <div id="results">
             </div>
-            <br />
+            <a id="addadd" class="adder confirmpreview" href="">click to confirm text and image</a>
         </div>
 
         <div id="gimage">

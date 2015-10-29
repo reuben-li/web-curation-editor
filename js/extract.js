@@ -29,6 +29,7 @@ $(document).ready(function() {
                     $("#results").html(content); //append received data into the element
                     $("#results").slideDown(); //show results with slide down effect
                     $("#loading_indicator").hide(); //hide loading indicator image
+                    $('#addadd').show();
                 },'json');
         }
     });
